@@ -1,5 +1,15 @@
 # atlar bank project
 
+# contents
+
+- [general notes](#general-notes)
+- [specifications](#specifications)
+- [example steps](#example-steps)
+- [install steps](#install-steps)
+- [what i learned and how i reasoned through the project](#what-i-learned-and-how-i-reasoned-through-the-project)
+- [things left out or to improve](#things-left-out-or-to-improve)
+- [sponsors](#sponsors)
+
 ## general notes
 
 - use tech i am used to & show my skills
