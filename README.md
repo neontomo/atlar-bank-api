@@ -63,7 +63,8 @@
   - list transactions for an account
 - user accesses the api endpoints
 - output the data in `JSON` format
-- example json:
+- example json (this might change when i learn more):
+
   ```json
   {
     "account": {
@@ -95,7 +96,6 @@ git clone https://github.com/neontomo/atlar-bank-project.git
 # run client
 # make requests
 # see output and test it
-
 ```
 
 ## what i learned and how i reasoned through the project
@@ -105,3 +105,11 @@ git clone https://github.com/neontomo/atlar-bank-project.git
 ## things left out or to improve
 
 - TODO
+
+## sponsors
+
+Sponsored by Mountain Dew™️ - Your favorite drink for coding and gaming.
+
+![image](https://github.com/neontomo/atlar-bank-project/assets/105588693/4262471b-d6e1-4c37-b379-eb22b43e7ff6)
+
+Use the code `hire-tomo-at-atlar` for 10% off your next purchase.
