@@ -1,0 +1,4197 @@
+{
+  "Document": {
+    "$": {
+      "xmlns": "urn:iso:std:iso:20022:tech:xsd:camt.053.001.02",
+      "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+      "xsi:schemaLocation": "urn:iso:std:iso:20022:tech:xsd:camt.053.001.02"
+    },
+    "BkToCstmrStmt": [
+      {
+        "GrpHdr": [
+          {
+            "MsgId": ["3131111"],
+            "CreDtTm": ["2018-12-18T02:50:52+01:00"],
+            "MsgRcpt": [
+              {
+                "Id": [
+                  {
+                    "OrgId": [
+                      {
+                        "Othr": [
+                          {
+                            "Id": ["33331111222222"],
+                            "SchmeNm": [{ "Cd": ["BANK"] }]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Stmt": [
+          {
+            "Id": ["STOIID65181218000000000007"],
+            "ElctrncSeqNb": ["244"],
+            "LglSeqNb": ["244"],
+            "CreDtTm": ["2018-12-18T02:35:35+01:00"],
+            "FrToDt": [
+              {
+                "FrDtTm": ["2018-12-17T00:00:00+01:00"],
+                "ToDtTm": ["2018-12-17T23:59:59+01:00"]
+              }
+            ],
+            "Acct": [
+              {
+                "Id": [
+                  {
+                    "Othr": [
+                      { "Id": ["54400001111"], "SchmeNm": [{ "Cd": ["BBAN"] }] }
+                    ]
+                  }
+                ],
+                "Ccy": ["SEK"],
+                "Ownr": [
+                  {
+                    "Nm": ["TEST Customer"],
+                    "Id": [
+                      {
+                        "OrgId": [
+                          {
+                            "Othr": [
+                              {
+                                "Id": ["33331111222222"],
+                                "SchmeNm": [{ "Cd": ["BANK"] }]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "Svcr": [{ "FinInstnId": [{ "BIC": ["ESSESESSXXX"] }] }]
+              }
+            ],
+            "Bal": [
+              {
+                "Tp": [{ "CdOrPrtry": [{ "Cd": ["OPBD"] }] }],
+                "Amt": [{ "_": "3865371.31", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["CRDT"],
+                "Dt": [{ "Dt": ["2018-12-17"] }]
+              },
+              {
+                "Tp": [{ "CdOrPrtry": [{ "Cd": ["CLBD"] }] }],
+                "CdtLine": [
+                  {
+                    "Incl": ["false"],
+                    "Amt": [{ "_": "2500000", "$": { "Ccy": "SEK" } }]
+                  }
+                ],
+                "Amt": [{ "_": "4408320.31", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["CRDT"],
+                "Dt": [{ "Dt": ["2018-12-17"] }]
+              },
+              {
+                "Tp": [{ "CdOrPrtry": [{ "Cd": ["CLAV"] }] }],
+                "CdtLine": [
+                  {
+                    "Incl": ["false"],
+                    "Amt": [{ "_": "2500000", "$": { "Ccy": "SEK" } }]
+                  }
+                ],
+                "Amt": [{ "_": "4408320.31", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["CRDT"],
+                "Dt": [{ "Dt": ["2018-12-17"] }]
+              },
+              {
+                "Tp": [{ "CdOrPrtry": [{ "Cd": ["FWAV"] }] }],
+                "Amt": [{ "_": "4408320.31", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["CRDT"],
+                "Dt": [{ "Dt": ["2018-12-18"] }]
+              }
+            ],
+            "TxsSummry": [
+              {
+                "TtlCdtNtries": [{ "NbOfNtries": ["5"], "Sum": ["787850.00"] }],
+                "TtlDbtNtries": [{ "NbOfNtries": ["2"], "Sum": ["244901.00"] }]
+              }
+            ],
+            "Ntry": [
+              {
+                "NtryRef": ["LBE5419-0186-0029234"],
+                "Amt": [{ "_": "242041.00", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["DBIT"],
+                "Sts": ["BOOK"],
+                "BookgDt": [{ "Dt": ["2018-12-17"] }],
+                "ValDt": [{ "Dt": ["2018-12-17"] }],
+                "AcctSvcrRef": ["STOI520111188400029234"],
+                "BkTxCd": [
+                  {
+                    "Domn": [
+                      {
+                        "Cd": ["PMNT"],
+                        "Fmly": [{ "Cd": ["ICDT"], "SubFmlyCd": ["ATXN"] }]
+                      }
+                    ],
+                    "Prtry": [{ "Cd": ["TRF"], "Issr": ["SWIFT"] }]
+                  }
+                ],
+                "NtryDtls": [
+                  {
+                    "TxDtls": [
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3970707"],
+                            "AcctSvcrRef": ["STOESI05181210113433580558000001"],
+                            "PmtInfId": ["BB5806984"],
+                            "InstrId": ["TR40552142"],
+                            "EndToEndId": ["EE32683251"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "25000.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["1119993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["6767676"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "25000.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["85858"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3970707"],
+                            "AcctSvcrRef": ["STOESI05181210113433580559000001"],
+                            "PmtInfId": ["BB5806985"],
+                            "InstrId": ["TR40552146"],
+                            "EndToEndId": ["EE32683255"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "6250.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["56565656"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["333333333333"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "6250.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3970707"],
+                            "AcctSvcrRef": ["STOESI05181210113433580559000002"],
+                            "PmtInfId": ["BB5806985"],
+                            "InstrId": ["TR40552150"],
+                            "EndToEndId": ["EE32683259"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "104773.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["56565656"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "104773.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["2828282828"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3970707"],
+                            "AcctSvcrRef": ["STOESI05181210113433580559000003"],
+                            "PmtInfId": ["BB5806985"],
+                            "InstrId": ["TR40552151"],
+                            "EndToEndId": ["EE32683260"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "27500.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["51515151"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["111111"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "27500.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3970707"],
+                            "AcctSvcrRef": ["STOESI05181210113433580561000001"],
+                            "PmtInfId": ["BB5806987"],
+                            "InstrId": ["TR40552152"],
+                            "EndToEndId": ["EE32683261"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "25000.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["57575757"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "25000.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["88888"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3983036"],
+                            "AcctSvcrRef": ["STOESI05181211145317651028000001"],
+                            "PmtInfId": ["BB5829868"],
+                            "InstrId": ["TR40720374"],
+                            "EndToEndId": ["EE32821665"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "201.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["53535353"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "201.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["515151515151"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3983036"],
+                            "AcctSvcrRef": ["STOESI05181211145317651028000002"],
+                            "PmtInfId": ["BB5829868"],
+                            "InstrId": ["TR40720375"],
+                            "EndToEndId": ["EE32821666"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "602.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["53535353"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "602.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["515151515151"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3983036"],
+                            "AcctSvcrRef": ["STOESI05181211145317651028000003"],
+                            "PmtInfId": ["BB5829868"],
+                            "InstrId": ["TR40720376"],
+                            "EndToEndId": ["EE32821667"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "6988.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["Test Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["55555555"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "6988.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["555555555555"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3983036"],
+                            "AcctSvcrRef": ["STOESI05181211145317651028000004"],
+                            "PmtInfId": ["BB5829868"],
+                            "InstrId": ["TR40720377"],
+                            "EndToEndId": ["EE32821668"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "2591.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["53535353"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "2591.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["515151515151"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3983036"],
+                            "AcctSvcrRef": ["STOESI05181211145317651028000005"],
+                            "PmtInfId": ["BB5829868"],
+                            "InstrId": ["TR40720378"],
+                            "EndToEndId": ["EE32821669"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "1782.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9899993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["5555555"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "1782.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["555555555556"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3983036"],
+                            "AcctSvcrRef": ["STOESI05181211145317651029000001"],
+                            "PmtInfId": ["BB5829869"],
+                            "InstrId": ["TR40720379"],
+                            "EndToEndId": ["EE32821670"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "13854.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Benficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9999999"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "13854.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["1111111111"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF4008342"],
+                            "AcctSvcrRef": ["STOESI05181214152933824805000001"],
+                            "PmtInfId": ["BB5876539"],
+                            "InstrId": ["TR41019169"],
+                            "EndToEndId": ["EE33055029"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "27500.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["3535353"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["1807"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "27500.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "NtryRef": ["BG52827999 00444-0010452"],
+                "Amt": [{ "_": "91838.00", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["CRDT"],
+                "Sts": ["BOOK"],
+                "BookgDt": [{ "Dt": ["2018-12-17"] }],
+                "ValDt": [{ "Dt": ["2018-12-17"] }],
+                "AcctSvcrRef": ["STOI501110110190010452"],
+                "BkTxCd": [
+                  {
+                    "Domn": [
+                      {
+                        "Cd": ["PMNT"],
+                        "Fmly": [{ "Cd": ["RCDT"], "SubFmlyCd": ["ATXN"] }]
+                      }
+                    ],
+                    "Prtry": [{ "Cd": ["TRF"], "Issr": ["SWIFT"] }]
+                  }
+                ],
+                "NtryDtls": [
+                  {
+                    "TxDtls": [
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOIIQ0I201812171411243202000001"],
+                            "InstrId": ["52827359"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "8625.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [
+                              {
+                                "Nm": ["Debtor"],
+                                "PstlAdr": [
+                                  {
+                                    "StrtNm": ["Street name"],
+                                    "PstCd": ["Postal code"],
+                                    "TwnNm": ["Town name"]
+                                  }
+                                ]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9814493"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ],
+                            "CdtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["50193999"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "8625.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOIIQ0I201812171411243218000001"],
+                            "InstrId": ["52827359"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "26500.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [
+                              {
+                                "Nm": ["Debtor"],
+                                "PstlAdr": [
+                                  {
+                                    "StrtNm": ["Street name"],
+                                    "PstCd": ["Postal code"],
+                                    "TwnNm": ["Town name"]
+                                  }
+                                ]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9814493"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ],
+                            "CdtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["501998/"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "26500.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOIIQ0I201812171411243228000001"],
+                            "InstrId": ["52827359"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "1313.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [
+                              {
+                                "Nm": ["Debtor"],
+                                "PstlAdr": [
+                                  {
+                                    "StrtNm": ["Street name"],
+                                    "PstCd": ["Postal code"],
+                                    "TwnNm": ["Town name"]
+                                  }
+                                ]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9814493"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ],
+                            "CdtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["10297999"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "1313.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOIIQ0I201812171411243240000001"],
+                            "InstrId": ["52827359"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "21875.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [
+                              {
+                                "Nm": ["Debtor"],
+                                "PstlAdr": [
+                                  {
+                                    "StrtNm": ["Street name"],
+                                    "PstCd": ["Postal code"],
+                                    "TwnNm": ["Town name"]
+                                  }
+                                ]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9814493"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ],
+                            "CdtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["501999"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "21875.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOIIQ0I201812171411243251000001"],
+                            "InstrId": ["52827359"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "17900.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [
+                              {
+                                "Nm": ["Debtor"],
+                                "PstlAdr": [
+                                  {
+                                    "StrtNm": ["Street name"],
+                                    "PstCd": ["Postal code"],
+                                    "TwnNm": ["Town name"]
+                                  }
+                                ]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9814493"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ],
+                            "CdtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["501991"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "17900.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOIIQ0I201812171411243260000001"],
+                            "InstrId": ["52827359"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "15625.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [
+                              {
+                                "Nm": ["Debtor"],
+                                "PstlAdr": [
+                                  {
+                                    "StrtNm": ["Street name"],
+                                    "PstCd": ["Postal code"],
+                                    "TwnNm": ["Town name"]
+                                  }
+                                ]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9814493"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ],
+                            "CdtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["501997"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "15625.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "NtryRef": ["B81215944996-0029236"],
+                "Amt": [{ "_": "72690.00", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["CRDT"],
+                "Sts": ["BOOK"],
+                "BookgDt": [{ "Dt": ["2018-12-17"] }],
+                "ValDt": [{ "Dt": ["2018-12-17"] }],
+                "AcctSvcrRef": ["STOI520111188400029236"],
+                "BkTxCd": [
+                  {
+                    "Domn": [
+                      {
+                        "Cd": ["PMNT"],
+                        "Fmly": [{ "Cd": ["RCDT"], "SubFmlyCd": ["BOOK"] }]
+                      }
+                    ],
+                    "Prtry": [{ "Cd": ["TRF"], "Issr": ["SWIFT"] }]
+                  }
+                ],
+                "NtryDtls": [
+                  {
+                    "TxDtls": [
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOESC05181215063528843195009423"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "72690.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ],
+                            "PrtryAmt": [
+                              {
+                                "Tp": ["IBS"],
+                                "Amt": [
+                                  { "_": "72690.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["Debtor"] }],
+                            "Cdtr": [{ "Nm": ["TEST Customer"] }]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [{ "Ustrd": ["B81215944996"] }]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "NtryRef": ["INTERN ÖVERF-0029240"],
+                "Amt": [{ "_": "463000.00", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["CRDT"],
+                "Sts": ["BOOK"],
+                "BookgDt": [{ "Dt": ["2018-12-17"] }],
+                "ValDt": [{ "Dt": ["2018-12-17"] }],
+                "AcctSvcrRef": ["STOI520111188400029240"],
+                "BkTxCd": [
+                  {
+                    "Domn": [
+                      {
+                        "Cd": ["PMNT"],
+                        "Fmly": [{ "Cd": ["RCDT"], "SubFmlyCd": ["ATXN"] }]
+                      }
+                    ],
+                    "Prtry": [{ "Cd": ["TRF"], "Issr": ["SWIFT"] }]
+                  }
+                ],
+                "NtryDtls": [
+                  {
+                    "TxDtls": [
+                      {
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "463000.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [{ "Ustrd": ["8461468153"] }]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "NtryRef": ["JAMBO 81518-0029248"],
+                "Amt": [{ "_": "2860.00", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["DBIT"],
+                "Sts": ["BOOK"],
+                "BookgDt": [{ "Dt": ["2018-12-17"] }],
+                "ValDt": [{ "Dt": ["2018-12-17"] }],
+                "AcctSvcrRef": ["STOI520111188400029248"],
+                "BkTxCd": [
+                  {
+                    "Domn": [
+                      {
+                        "Cd": ["PMNT"],
+                        "Fmly": [{ "Cd": ["ICDT"], "SubFmlyCd": ["DMCT"] }]
+                      }
+                    ],
+                    "Prtry": [{ "Cd": ["TRF"], "Issr": ["SWIFT"] }]
+                  }
+                ],
+                "NtryDtls": [
+                  {
+                    "TxDtls": [
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STONCM01181213170029017721000001"],
+                            "PmtInfId": ["Jambo 81518"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "2860.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["080808080"],
+                                        "SchmeNm": [{ "Cd": ["BBAN"] }]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [{ "Ustrd": ["81518"] }]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "NtryRef": ["JS2320361767-0029249"],
+                "Amt": [{ "_": "160222.00", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["CRDT"],
+                "Sts": ["BOOK"],
+                "BookgDt": [{ "Dt": ["2018-12-17"] }],
+                "ValDt": [{ "Dt": ["2018-12-17"] }],
+                "AcctSvcrRef": ["STOI520111188400029249"],
+                "BkTxCd": [
+                  {
+                    "Domn": [
+                      {
+                        "Cd": ["PMNT"],
+                        "Fmly": [{ "Cd": ["NTAV"], "SubFmlyCd": ["NTAV"] }]
+                      }
+                    ],
+                    "Prtry": [{ "Cd": ["MSC MISCELLANEOUS"], "Issr": ["SEB"] }]
+                  }
+                ],
+                "NtryDtls": [
+                  {
+                    "TxDtls": [
+                      {
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "160222.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [{ "Ustrd": ["JS2320361767"] }]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "NtryRef": ["46706206020-0029254"],
+                "Amt": [{ "_": "100.00", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["CRDT"],
+                "Sts": ["BOOK"],
+                "BookgDt": [{ "Dt": ["2018-12-17"] }],
+                "ValDt": [{ "Dt": ["2018-12-17"] }],
+                "AcctSvcrRef": ["STOI520111188400029254"],
+                "BkTxCd": [
+                  {
+                    "Domn": [
+                      {
+                        "Cd": ["PMNT"],
+                        "Fmly": [{ "Cd": ["RCDT"], "SubFmlyCd": ["DMCT"] }]
+                      }
+                    ],
+                    "Prtry": [{ "Cd": ["TRF"], "Issr": ["SWIFT"] }]
+                  }
+                ],
+                "NtryDtls": [
+                  {
+                    "TxDtls": [
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOBIR39181217202525818414000001"],
+                            "PmtInfId": ["5668100188810111"],
+                            "InstrId": ["A085B9BC534E4009AE2AA165518255CC"],
+                            "EndToEndId": ["NOT PROVIDED"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "100.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [
+                              {
+                                "Nm": ["Debtor"],
+                                "Id": [
+                                  {
+                                    "PrvtId": [
+                                      {
+                                        "Othr": [
+                                          {
+                                            "Id": ["45678901234"],
+                                            "SchmeNm": [{ "Cd": ["CUST"] }]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ],
+                            "Cdtr": [
+                              {
+                                "Nm": ["TEST Customer"],
+                                "Id": [
+                                  {
+                                    "OrgId": [
+                                      {
+                                        "Othr": [
+                                          {
+                                            "Id": ["33331111222222"],
+                                            "SchmeNm": [{ "Cd": ["CUST"] }]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ],
+                            "UltmtCdtr": [{ "Nm": ["TEST Customer"] }]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["SKIASESS"] }] }
+                            ],
+                            "CdtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "Purp": [{ "Cd": ["SUPP"] }],
+                        "RmtInf": [{ "Ustrd": ["84646156"] }]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Id": ["STOIID65181218000000000007"],
+            "ElctrncSeqNb": ["244"],
+            "LglSeqNb": ["244"],
+            "CreDtTm": ["2018-12-18T02:35:35+01:00"],
+            "FrToDt": [
+              {
+                "FrDtTm": ["2018-12-17T00:00:00+01:00"],
+                "ToDtTm": ["2018-12-17T23:59:59+01:00"]
+              }
+            ],
+            "Acct": [
+              {
+                "Id": [
+                  {
+                    "Othr": [
+                      { "Id": ["3947876"], "SchmeNm": [{ "Cd": ["BBAN"] }] }
+                    ]
+                  }
+                ],
+                "Ccy": ["SEK"],
+                "Ownr": [
+                  {
+                    "Nm": ["Bobby"],
+                    "Id": [
+                      {
+                        "OrgId": [
+                          {
+                            "Othr": [
+                              {
+                                "Id": ["33331111222222"],
+                                "SchmeNm": [{ "Cd": ["BANK"] }]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "Svcr": [{ "FinInstnId": [{ "BIC": ["ESSESESSXXX"] }] }]
+              }
+            ],
+            "TxsSummry": [
+              {
+                "TtlCdtNtries": [{ "NbOfNtries": ["5"], "Sum": ["787850.00"] }],
+                "TtlDbtNtries": [{ "NbOfNtries": ["2"], "Sum": ["244901.00"] }]
+              }
+            ],
+            "Ntry": [
+              {
+                "NtryRef": ["LBE5419-0186-0029234"],
+                "Amt": [{ "_": "242041.00", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["DBIT"],
+                "Sts": ["BOOK"],
+                "BookgDt": [{ "Dt": ["2018-12-17"] }],
+                "ValDt": [{ "Dt": ["2018-12-17"] }],
+                "AcctSvcrRef": ["STOI520111188400029234"],
+                "BkTxCd": [
+                  {
+                    "Domn": [
+                      {
+                        "Cd": ["PMNT"],
+                        "Fmly": [{ "Cd": ["ICDT"], "SubFmlyCd": ["ATXN"] }]
+                      }
+                    ],
+                    "Prtry": [{ "Cd": ["TRF"], "Issr": ["SWIFT"] }]
+                  }
+                ],
+                "NtryDtls": [
+                  {
+                    "TxDtls": [
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3970707"],
+                            "AcctSvcrRef": ["STOESI05181210113433580558000001"],
+                            "PmtInfId": ["BB5806984"],
+                            "InstrId": ["TR40552142"],
+                            "EndToEndId": ["EE32683251"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "25000.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["1119993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["6767676"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "25000.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["85858"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3970707"],
+                            "AcctSvcrRef": ["STOESI05181210113433580559000001"],
+                            "PmtInfId": ["BB5806985"],
+                            "InstrId": ["TR40552146"],
+                            "EndToEndId": ["EE32683255"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "6250.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["56565656"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["333333333333"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "6250.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3970707"],
+                            "AcctSvcrRef": ["STOESI05181210113433580559000002"],
+                            "PmtInfId": ["BB5806985"],
+                            "InstrId": ["TR40552150"],
+                            "EndToEndId": ["EE32683259"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "104773.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["56565656"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "104773.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["2828282828"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3970707"],
+                            "AcctSvcrRef": ["STOESI05181210113433580559000003"],
+                            "PmtInfId": ["BB5806985"],
+                            "InstrId": ["TR40552151"],
+                            "EndToEndId": ["EE32683260"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "27500.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["51515151"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["111111"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "27500.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3970707"],
+                            "AcctSvcrRef": ["STOESI05181210113433580561000001"],
+                            "PmtInfId": ["BB5806987"],
+                            "InstrId": ["TR40552152"],
+                            "EndToEndId": ["EE32683261"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "25000.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["57575757"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "25000.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["88888"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3983036"],
+                            "AcctSvcrRef": ["STOESI05181211145317651028000001"],
+                            "PmtInfId": ["BB5829868"],
+                            "InstrId": ["TR40720374"],
+                            "EndToEndId": ["EE32821665"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "201.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["53535353"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "201.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["515151515151"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3983036"],
+                            "AcctSvcrRef": ["STOESI05181211145317651028000002"],
+                            "PmtInfId": ["BB5829868"],
+                            "InstrId": ["TR40720375"],
+                            "EndToEndId": ["EE32821666"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "602.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["53535353"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "602.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["515151515151"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3983036"],
+                            "AcctSvcrRef": ["STOESI05181211145317651028000003"],
+                            "PmtInfId": ["BB5829868"],
+                            "InstrId": ["TR40720376"],
+                            "EndToEndId": ["EE32821667"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "6988.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["Test Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["55555555"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "6988.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["555555555555"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3983036"],
+                            "AcctSvcrRef": ["STOESI05181211145317651028000004"],
+                            "PmtInfId": ["BB5829868"],
+                            "InstrId": ["TR40720377"],
+                            "EndToEndId": ["EE32821668"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "2591.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["53535353"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "2591.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["515151515151"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3983036"],
+                            "AcctSvcrRef": ["STOESI05181211145317651028000005"],
+                            "PmtInfId": ["BB5829868"],
+                            "InstrId": ["TR40720378"],
+                            "EndToEndId": ["EE32821669"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "1782.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9899993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["5555555"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "1782.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["555555555556"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF3983036"],
+                            "AcctSvcrRef": ["STOESI05181211145317651029000001"],
+                            "PmtInfId": ["BB5829869"],
+                            "InstrId": ["TR40720379"],
+                            "EndToEndId": ["EE32821670"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "13854.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Benficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9999999"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "13854.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "CdtrRefInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["SCOR"] }] }
+                                    ],
+                                    "Ref": ["1111111111"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "MsgId": ["BF4008342"],
+                            "AcctSvcrRef": ["STOESI05181214152933824805000001"],
+                            "PmtInfId": ["BB5876539"],
+                            "InstrId": ["TR41019169"],
+                            "EndToEndId": ["EE33055029"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "27500.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9894993"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "Ccy": ["SEK"]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["3535353"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }],
+                                        "Issr": ["BGC"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["1807"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "27500.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "NtryRef": ["BG52827999 00444-0010452"],
+                "Amt": [{ "_": "91838.00", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["CRDT"],
+                "Sts": ["BOOK"],
+                "BookgDt": [{ "Dt": ["2018-12-17"] }],
+                "ValDt": [{ "Dt": ["2018-12-17"] }],
+                "AcctSvcrRef": ["STOI501110110190010452"],
+                "BkTxCd": [
+                  {
+                    "Domn": [
+                      {
+                        "Cd": ["PMNT"],
+                        "Fmly": [{ "Cd": ["RCDT"], "SubFmlyCd": ["ATXN"] }]
+                      }
+                    ],
+                    "Prtry": [{ "Cd": ["TRF"], "Issr": ["SWIFT"] }]
+                  }
+                ],
+                "NtryDtls": [
+                  {
+                    "TxDtls": [
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOIIQ0I201812171411243202000001"],
+                            "InstrId": ["52827359"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "8625.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [
+                              {
+                                "Nm": ["Debtor"],
+                                "PstlAdr": [
+                                  {
+                                    "StrtNm": ["Street name"],
+                                    "PstCd": ["Postal code"],
+                                    "TwnNm": ["Town name"]
+                                  }
+                                ]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9814493"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ],
+                            "CdtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["50193999"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "8625.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOIIQ0I201812171411243218000001"],
+                            "InstrId": ["52827359"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "26500.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [
+                              {
+                                "Nm": ["Debtor"],
+                                "PstlAdr": [
+                                  {
+                                    "StrtNm": ["Street name"],
+                                    "PstCd": ["Postal code"],
+                                    "TwnNm": ["Town name"]
+                                  }
+                                ]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9814493"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ],
+                            "CdtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["501998/"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "26500.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOIIQ0I201812171411243228000001"],
+                            "InstrId": ["52827359"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "1313.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [
+                              {
+                                "Nm": ["Debtor"],
+                                "PstlAdr": [
+                                  {
+                                    "StrtNm": ["Street name"],
+                                    "PstCd": ["Postal code"],
+                                    "TwnNm": ["Town name"]
+                                  }
+                                ]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9814493"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ],
+                            "CdtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["10297999"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      { "_": "1313.000", "$": { "Ccy": "SEK" } }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOIIQ0I201812171411243240000001"],
+                            "InstrId": ["52827359"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "21875.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [
+                              {
+                                "Nm": ["Debtor"],
+                                "PstlAdr": [
+                                  {
+                                    "StrtNm": ["Street name"],
+                                    "PstCd": ["Postal code"],
+                                    "TwnNm": ["Town name"]
+                                  }
+                                ]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["TEST Customer"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9814493"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ],
+                            "CdtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["501999"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "21875.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOIIQ0I201812171411243251000001"],
+                            "InstrId": ["52827359"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "17900.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [
+                              {
+                                "Nm": ["Debtor"],
+                                "PstlAdr": [
+                                  {
+                                    "StrtNm": ["Street name"],
+                                    "PstCd": ["Postal code"],
+                                    "TwnNm": ["Town name"]
+                                  }
+                                ]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9814493"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ],
+                            "CdtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["501991"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "17900.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOIIQ0I201812171411243260000001"],
+                            "InstrId": ["52827359"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "15625.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [
+                              {
+                                "Nm": ["Debtor"],
+                                "PstlAdr": [
+                                  {
+                                    "StrtNm": ["Street name"],
+                                    "PstCd": ["Postal code"],
+                                    "TwnNm": ["Town name"]
+                                  }
+                                ]
+                              }
+                            ],
+                            "Cdtr": [{ "Nm": ["Beneficiary"] }],
+                            "DbtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["9814493"],
+                                        "SchmeNm": [{ "Prtry": ["BGNR"] }]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ],
+                            "CdtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [
+                          {
+                            "Strd": [
+                              {
+                                "RfrdDocInf": [
+                                  {
+                                    "Tp": [
+                                      { "CdOrPrtry": [{ "Cd": ["CINV"] }] }
+                                    ],
+                                    "Nb": ["501997"]
+                                  }
+                                ],
+                                "RfrdDocAmt": [
+                                  {
+                                    "RmtdAmt": [
+                                      {
+                                        "_": "15625.000",
+                                        "$": { "Ccy": "SEK" }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "NtryRef": ["B81215944996-0029236"],
+                "Amt": [{ "_": "72690.00", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["CRDT"],
+                "Sts": ["BOOK"],
+                "BookgDt": [{ "Dt": ["2018-12-17"] }],
+                "ValDt": [{ "Dt": ["2018-12-17"] }],
+                "AcctSvcrRef": ["STOI520111188400029236"],
+                "BkTxCd": [
+                  {
+                    "Domn": [
+                      {
+                        "Cd": ["PMNT"],
+                        "Fmly": [{ "Cd": ["RCDT"], "SubFmlyCd": ["BOOK"] }]
+                      }
+                    ],
+                    "Prtry": [{ "Cd": ["TRF"], "Issr": ["SWIFT"] }]
+                  }
+                ],
+                "NtryDtls": [
+                  {
+                    "TxDtls": [
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOESC05181215063528843195009423"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "72690.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ],
+                            "PrtryAmt": [
+                              {
+                                "Tp": ["IBS"],
+                                "Amt": [
+                                  { "_": "72690.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["Debtor"] }],
+                            "Cdtr": [{ "Nm": ["TEST Customer"] }]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [{ "Ustrd": ["B81215944996"] }]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "NtryRef": ["INTERN ÖVERF-0029240"],
+                "Amt": [{ "_": "463000.00", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["CRDT"],
+                "Sts": ["BOOK"],
+                "BookgDt": [{ "Dt": ["2018-12-17"] }],
+                "ValDt": [{ "Dt": ["2018-12-17"] }],
+                "AcctSvcrRef": ["STOI520111188400029240"],
+                "BkTxCd": [
+                  {
+                    "Domn": [
+                      {
+                        "Cd": ["PMNT"],
+                        "Fmly": [{ "Cd": ["RCDT"], "SubFmlyCd": ["ATXN"] }]
+                      }
+                    ],
+                    "Prtry": [{ "Cd": ["TRF"], "Issr": ["SWIFT"] }]
+                  }
+                ],
+                "NtryDtls": [
+                  {
+                    "TxDtls": [
+                      {
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "463000.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [{ "Ustrd": ["8461468153"] }]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "NtryRef": ["JAMBO 81518-0029248"],
+                "Amt": [{ "_": "2860.00", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["DBIT"],
+                "Sts": ["BOOK"],
+                "BookgDt": [{ "Dt": ["2018-12-17"] }],
+                "ValDt": [{ "Dt": ["2018-12-17"] }],
+                "AcctSvcrRef": ["STOI520111188400029248"],
+                "BkTxCd": [
+                  {
+                    "Domn": [
+                      {
+                        "Cd": ["PMNT"],
+                        "Fmly": [{ "Cd": ["ICDT"], "SubFmlyCd": ["DMCT"] }]
+                      }
+                    ],
+                    "Prtry": [{ "Cd": ["TRF"], "Issr": ["SWIFT"] }]
+                  }
+                ],
+                "NtryDtls": [
+                  {
+                    "TxDtls": [
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STONCM01181213170029017721000001"],
+                            "PmtInfId": ["Jambo 81518"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "2860.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [{ "Nm": ["TEST Customer"] }],
+                            "CdtrAcct": [
+                              {
+                                "Id": [
+                                  {
+                                    "Othr": [
+                                      {
+                                        "Id": ["080808080"],
+                                        "SchmeNm": [{ "Cd": ["BBAN"] }]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              {
+                                "FinInstnId": [
+                                  { "Nm": ["Skandinaviska Enskilda Banken"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [{ "Ustrd": ["81518"] }]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "NtryRef": ["JS2320361767-0029249"],
+                "Amt": [{ "_": "160222.00", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["CRDT"],
+                "Sts": ["BOOK"],
+                "BookgDt": [{ "Dt": ["2018-12-17"] }],
+                "ValDt": [{ "Dt": ["2018-12-17"] }],
+                "AcctSvcrRef": ["STOI520111188400029249"],
+                "BkTxCd": [
+                  {
+                    "Domn": [
+                      {
+                        "Cd": ["PMNT"],
+                        "Fmly": [{ "Cd": ["NTAV"], "SubFmlyCd": ["NTAV"] }]
+                      }
+                    ],
+                    "Prtry": [{ "Cd": ["MSC MISCELLANEOUS"], "Issr": ["SEB"] }]
+                  }
+                ],
+                "NtryDtls": [
+                  {
+                    "TxDtls": [
+                      {
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "160222.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RmtInf": [{ "Ustrd": ["JS2320361767"] }]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "NtryRef": ["46706206020-0029254"],
+                "Amt": [{ "_": "100.00", "$": { "Ccy": "SEK" } }],
+                "CdtDbtInd": ["CRDT"],
+                "Sts": ["BOOK"],
+                "BookgDt": [{ "Dt": ["2018-12-17"] }],
+                "ValDt": [{ "Dt": ["2018-12-17"] }],
+                "AcctSvcrRef": ["STOI520111188400029254"],
+                "BkTxCd": [
+                  {
+                    "Domn": [
+                      {
+                        "Cd": ["PMNT"],
+                        "Fmly": [{ "Cd": ["RCDT"], "SubFmlyCd": ["DMCT"] }]
+                      }
+                    ],
+                    "Prtry": [{ "Cd": ["TRF"], "Issr": ["SWIFT"] }]
+                  }
+                ],
+                "NtryDtls": [
+                  {
+                    "TxDtls": [
+                      {
+                        "Refs": [
+                          {
+                            "AcctSvcrRef": ["STOBIR39181217202525818414000001"],
+                            "PmtInfId": ["5668100188810111"],
+                            "InstrId": ["A085B9BC534E4009AE2AA165518255CC"],
+                            "EndToEndId": ["NOT PROVIDED"]
+                          }
+                        ],
+                        "AmtDtls": [
+                          {
+                            "TxAmt": [
+                              {
+                                "Amt": [
+                                  { "_": "100.00", "$": { "Ccy": "SEK" } }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "RltdPties": [
+                          {
+                            "Dbtr": [
+                              {
+                                "Nm": ["Debtor"],
+                                "Id": [
+                                  {
+                                    "PrvtId": [
+                                      {
+                                        "Othr": [
+                                          {
+                                            "Id": ["45678901234"],
+                                            "SchmeNm": [{ "Cd": ["CUST"] }]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ],
+                            "Cdtr": [
+                              {
+                                "Nm": ["TEST Customer"],
+                                "Id": [
+                                  {
+                                    "OrgId": [
+                                      {
+                                        "Othr": [
+                                          {
+                                            "Id": ["33331111222222"],
+                                            "SchmeNm": [{ "Cd": ["CUST"] }]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ],
+                            "UltmtCdtr": [{ "Nm": ["TEST Customer"] }]
+                          }
+                        ],
+                        "RltdAgts": [
+                          {
+                            "DbtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["SKIASESS"] }] }
+                            ],
+                            "CdtrAgt": [
+                              { "FinInstnId": [{ "BIC": ["ESSESESS"] }] }
+                            ]
+                          }
+                        ],
+                        "Purp": [{ "Cd": ["SUPP"] }],
+                        "RmtInf": [{ "Ustrd": ["84646156"] }]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
