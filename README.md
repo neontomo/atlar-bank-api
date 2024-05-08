@@ -13,9 +13,10 @@
 ## general notes
 
 - use tech i am used to & show my skills
-- treat it as a project, not an interview assignment (this is my idea)
+- i plan to treat it as a project, not an interview assignment
 - write a bank api with accounts and transactions
 - parse as much data as possible
+- presumed stack: `react`, `nextjs`, `typescript`, `nodejs`, `express`, etc.
 
 ## specifications
 
@@ -120,6 +121,6 @@ git clone https://github.com/neontomo/atlar-bank-project.git
 
 Sponsored by Mountain Dew™️ - Your favorite drink for coding and gaming.
 
-![image](https://github.com/neontomo/atlar-bank-project/assets/105588693/4262471b-d6e1-4c37-b379-eb22b43e7ff6)
-
 Use the code `hire-tomo-at-atlar` for 10% off your next purchase.
+
+![image](https://github.com/neontomo/atlar-bank-project/assets/105588693/4262471b-d6e1-4c37-b379-eb22b43e7ff6)
