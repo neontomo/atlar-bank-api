@@ -16,7 +16,7 @@
 - i plan to treat it as a project, not an interview assignment
 - write a bank api with accounts and transactions
 - parse as much data as possible
-- presumed stack: `react`, `nextjs`, `typescript`, `nodejs`, `express`, etc.
+- presumed stack: `typescript`, `nodejs`, `express`, etc.
 
 ## specifications
 
