@@ -94,10 +94,10 @@ router.get(
         })
       })
 
-      res.send(transactionsArray)
+      return res.send(transactionsArray)
     } catch (error) {
       console.error(`[server error]: ${error}`)
-      res.send(`Error: ${error}`)
+      return res.send(`Error: ${error}`)
     }
   }
 )
@@ -124,10 +124,46 @@ router.get('/:accountNumber?', async (req: Request, res: Response) => {
       accountDataArray.push(accountData)
     })
 
-    res.send(accountDataArray)
+    return res.send(accountDataArray)
   } catch (error) {
     console.error(`[server error]: ${error}`)
-    res.send(`Error: ${error}`)
+    return res.send(`Error: ${error}`)
+  }
+})
+
+router.patch('/:accountNumber', async (req: Request, res: Response) => {
+  const { accountNumber } = req.params
+  const { ownerName } = req.body
+
+  if (!ownerName) {
+    return res.status(400).send('Error: Missing ownerName in request body')
+  }
+
+  if (accountNumber) {
+    console.log(
+      `[server]: Updating account info on account number: ${accountNumber}`
+    )
+  }
+
+  try {
+    const file = await loadFileToJSON()
+    const statements = file?.Document?.BkToCstmrStmt?.[0]?.Stmt as Statement[]
+    let accountDataArray = [] as AccountNew[]
+
+    statements?.forEach((statement) => {
+      const accountData = getAccountDataFromStatement(statement) as AccountNew
+
+      if (accountNumber && accountNumber !== accountData.accountNumber) {
+        return
+      }
+      accountData.ownerName = ownerName
+      accountDataArray.push(accountData)
+    })
+
+    return res.send(accountDataArray)
+  } catch (error) {
+    console.error(`[server error]: ${error}`)
+    return res.send(`Error: ${error}`)
   }
 })
 
