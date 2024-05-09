@@ -1,4 +1,4 @@
-# atlar bank project
+# atlar bank api
 
 # contents
 
@@ -11,6 +11,12 @@
 - [what i learned and how i reasoned through the project](#what-i-learned-and-how-i-reasoned-through-the-project)
 - [things left out or to improve](#things-left-out-or-to-improve)
 - [sponsors](#sponsors)
+
+## Screenshots
+
+![api-screenshot](https://github.com/neontomo/atlar-bank-api/assets/105588693/bb24e5c1-e231-43aa-a81f-ac88a8528fb6)
+
+![api-screenshot2](https://github.com/neontomo/atlar-bank-api/assets/105588693/765d6bf3-6883-4635-b229-f5f4718eb657)
 
 ## general notes
 
@@ -178,7 +184,7 @@ i spent a lot of my time considering stability and to some degree followed the [
 
 - **non-semantic api** - since my api renames values to be more semantic, i also considered making a separate api route that outputs the original values, for mission critical systems.
 
-- **structured doc** - i looked at atlars own api documentation which pointed me in the right direction a few times, i would have loved to have built out a more structured api doc like it.
+- **structured doc** - i looked at atlars own API documentation which pointed me in the right direction a few times, i would have loved to have built out a more structured api doc like it, but i made a very simple one at http://localhost:3000/
 
 - **security** - auth is something i skipped - not only because it would have taken time, but because i don't understand exactly who is using this particular api, which would influence my strategy. in general, i would implement a bearer/JWS token and send it with each request. other nice things:
 

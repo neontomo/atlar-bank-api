@@ -1,40 +1,8 @@
-import express from 'express'
-import { Request, Response } from 'express'
-import { loadFileToJSON } from '../../fileUtils'
-import { Statement } from '../../types'
-import { AccountNew, TransactionNew } from '../../types'
-
+import express, { Request, Response } from 'express'
+import { loadFileToJSON, getAccountDataFromStatement } from '../../fileUtils'
+import { createResponseMessage } from '../../errorUtils'
+import { AccountNew, TransactionNew, Statement } from '../../types'
 const router = express.Router()
-
-/* ROUTES:
- * GET /api/v1/accounts
- * GET /api/v1/accounts/:accountNumber
- * GET /api/v1/accounts/:accountNumber/transactions
- * PATCH /api/v1/accounts/:accountNumber
- * DELETE /api/v1/accounts/:accountNumber
- */
-
-function getAccountDataFromStatement(statement: Statement) {
-  const account = statement?.Acct?.[0]
-  const balance = statement?.Bal?.[0]
-
-  if (!account) {
-    return
-  }
-
-  const accountData = {
-    accountNumber: account?.Id?.[0]?.Othr?.[0]?.Id?.[0] || null,
-    currency: account?.Ccy?.[0] || null,
-    ownerName: account?.Ownr?.[0]?.Nm?.[0] || null,
-    balance: {
-      amount: balance?.Amt?.[0]?._ || null,
-      currency: balance?.Amt?.[0]?.['$']?.Ccy || null,
-      date: balance?.Dt?.[0]?.Dt?.[0] || null
-    }
-  } as AccountNew
-
-  return accountData
-}
 
 // GET /api/v1/accounts & GET /api/v1/accounts/:accountNumber
 router.get('/:accountNumber?', async (req: Request, res: Response) => {
@@ -59,10 +27,12 @@ router.get('/:accountNumber?', async (req: Request, res: Response) => {
       accountDataArray.push(accountData)
     })
 
+    if (accountNumber && !accountDataArray.length) {
+      return createResponseMessage(404, res, 'Account not found')
+    }
     return res.send(accountDataArray)
   } catch (error) {
-    console.error(`[server error]: ${error}`)
-    return res.status(500).send({ message: `Error: ${error}` })
+    return createResponseMessage(500, res, error)
   }
 })
 
@@ -84,8 +54,6 @@ router.get(
       const transactionsArray = [] as TransactionNew[]
 
       statements?.forEach((statement) => {
-        const paymentID = statement?.Id?.[0] as string
-
         statement?.Ntry?.forEach((transaction) => {
           const transactionData = {
             accountNumber:
@@ -127,16 +95,17 @@ router.get(
             return
           }
 
-          console.log(transactionData)
-
           transactionsArray.push(transactionData)
         })
       })
 
+      if (!transactionsArray.length) {
+        return createResponseMessage(404, res, 'Transactions not found')
+      }
+
       return res.send(transactionsArray)
     } catch (error) {
-      console.error(`[server error]: ${error}`)
-      return res.status(500).send({ message: `Error: ${error}` })
+      return createResponseMessage(500, res, error)
     }
   }
 )
@@ -147,10 +116,12 @@ router.patch('/:accountNumber?', async (req: Request, res: Response) => {
   const { currency, ownerName, balanceAmount, balanceCurrency, balanceDate } =
     req.body
 
+  console.log(
+    `[server]: Updating account with account number: ${accountNumber}`
+  )
+
   if (!accountNumber) {
-    return res
-      .status(400)
-      .send({ message: 'Error: Account number is required' })
+    return createResponseMessage(400, res, 'Account number is required')
   }
 
   try {
@@ -178,12 +149,11 @@ router.patch('/:accountNumber?', async (req: Request, res: Response) => {
     })
 
     if (!accountDataArray.length) {
-      return res.status(404).send({ message: 'Error: Account not found' })
+      return createResponseMessage(404, res, 'Account not found')
     }
     return res.send(accountDataArray)
   } catch (error) {
-    console.error(`[server error]: ${error}`)
-    return res.status(500).send({ message: `Error: ${error}` })
+    return createResponseMessage(500, res, error)
   }
 })
 
@@ -191,10 +161,12 @@ router.patch('/:accountNumber?', async (req: Request, res: Response) => {
 router.delete('/:accountNumber?', async (req: Request, res: Response) => {
   const { accountNumber } = req.params
 
+  console.log(
+    `[server]: Deleting account with account number: ${accountNumber}`
+  )
+
   if (!accountNumber) {
-    return res
-      .status(400)
-      .send({ message: 'Error: Account number is required' })
+    return createResponseMessage(400, res, 'Account number is required')
   }
 
   try {
@@ -211,7 +183,7 @@ router.delete('/:accountNumber?', async (req: Request, res: Response) => {
     })
 
     if (!deletedAccount) {
-      return res.status(404).send({ message: 'Error: Account not found' })
+      return createResponseMessage(404, res, 'Account not found')
     }
 
     return res.send({
@@ -220,8 +192,7 @@ router.delete('/:accountNumber?', async (req: Request, res: Response) => {
       deleted: true
     })
   } catch (error) {
-    console.error(`[server error]: ${error}`)
-    return res.status(500).send({ message: `Error: ${error}` })
+    return createResponseMessage(500, res, error)
   }
 })
 

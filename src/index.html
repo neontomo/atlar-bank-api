@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Atlar Bank API</title>
+    <style>
+      :root {
+        --primary-color: #5f4ce0;
+        --black-color: #111;
+        --white-color: #f4f4f4;
+        --bg-color: #f7f8f8;
+        --border-color: #d9dbdf;
+      }
+      button {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-color);
+        margin-bottom: 200px;
+        font-size: 15px;
+      }
+      .container {
+        width: 80%;
+        margin: 30px auto;
+      }
+      .container ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .container li {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .code {
+        background-color: var(--white-color);
+        color: gray;
+        margin: 10px 0;
+        padding: 0px 10px;
+        border-left: 3px solid var(--border-color);
+        font-size: 14px;
+      }
+      a {
+        color: var(--primary-color);
+        word-wrap: break-word;
+      }
+      footer {
+        background: #ddd;
+        color: black;
+        padding: 0;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      footer a {
+        color: black;
+      }
+      .container ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+      }
+      .container li {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        background-color: var(--white-color);
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      }
+      .bold {
+        font-weight: bold;
+      }
+      h3 {
+        margin: 0;
+      }
+      details {
+        cursor: pointer;
+      }
+      nav {
+        background: var(--white-color);
+        color: var(--black-color);
+        border-bottom: var(--border-color) 1px solid;
+        min-height: 70px;
+        display: flex;
+        justify-content: center;
+      }
+      nav div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+      }
+      nav a {
+        color: var(--black-color);
+        text-decoration: none;
+        font-size: 16px;
+      }
+      nav h1 {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <h1>
+          <a href="/">Atlar Bank API</a>
+        </h1>
+        <button
+          onClick="window.open('https://github.com/neontomo/atlar-bank-api');">
+          Documentation
+        </button>
+      </div>
+    </nav>
+
+    <main class="container">
+      <p>
+        Welcome to the Atlar Bank API. This API is used to manage customers,
+        accounts, and transactions.
+      </p>
+      <p>
+        To get started, please refer to the
+        <a
+          href="https://github.com/neontomo/atlar-bank-api"
+          target="_blank"
+          >documentation</a
+        >.
+      </p>
+
+      <ul>
+        <h3>A list of example endpoints:</h3>
+        <li>
+          <span
+            ><span class="bold">GET</span>
+            <a href="/api/v1/accounts">/api/v1/accounts</a></span
+          >
+          <details>
+            <summary>Example response</summary>
+            <span class="code">
+              [ { "accountNumber": "54400001111", "currency": "SEK",
+              "ownerName": "TEST Customer", "balance": { "amount": "3865371.31",
+              "currency": "SEK", "date": "2018-12-17" } } ]
+            </span>
+          </details>
+        </li>
+        <li>
+          <span
+            ><span class="bold">GET</span>
+            <a href="/api/v1/accounts/54400001111"
+              >/api/v1/accounts/54400001111</a
+            ></span
+          >
+          <details>
+            <summary>Example response</summary>
+            <span class="code">
+              [ { "accountNumber": "54400001111", "currency": "SEK",
+              "ownerName": "TEST Customer", "balance": { "amount": "3865371.31",
+              "currency": "SEK", "date": "2018-12-17" } } ]
+            </span>
+          </details>
+        </li>
+        <li>
+          <span>
+            <span class="bold">GET</span>
+            <a href="/api/v1/accounts/54400001111/transactions"
+              >/api/v1/accounts/54400001111/transactions</a
+            >
+          </span>
+          <details>
+            <summary>Example response</summary>
+            <span class="code">
+              [ { "accountNumber": "54400001111", "entryReference":
+              "LBE5419-0186-0029234", "amountDetails": { "amount": "242041.00",
+              "currency": "SEK" }, "currency": "SEK", "bookingDate":
+              "2018-12-17", "credit": false, "debit": true,
+              "remittanceInformation": { "referenceInfo": { "msgID":
+              "BF3970707", "accountServicerReference":
+              "STOESI05181210113433580558000001", "paymentInformationID":
+              "BB5806984", "instructionID": "TR40552142", "endToEndID":
+              "EE32683251" } } }, ]
+            </span>
+          </details>
+        </li>
+        <li>
+          <span
+            ><span class="bold">PATCH</span> /api/v1/accounts/54400001111</span
+          >
+          <details>
+            <summary>Example request</summary>
+            <span class="code">
+              { "ownerName": "Daisy", "balanceAmount": "2000" }
+            </span>
+          </details>
+
+          <details>
+            <summary>Example response</summary>
+            <span class="code">
+              [ { "accountNumber": "54400001111", "currency": "SEK",
+              "ownerName": "Daisy", "balance": { "amount": "2000", "currency":
+              "SEK", "date": "2018-12-17" } } ]
+            </span>
+          </details>
+        </li>
+        <li>
+          <span
+            ><span class="bold">DELETE</span> /api/v1/accounts/54400001111</span
+          >
+
+          <details>
+            <summary>Example request</summary>
+            <span class="code">{ "accountNumber": "54400001111" }</span>
+          </details>
+
+          <details>
+            <summary>Example response</summary>
+            <span class="code"
+              >{ "message": "Account with account number 54400001111 has been
+              deleted", "accountNumber": "54400001111", "deleted": true }</span
+            >
+          </details>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <p>
+        Made by
+        <a
+          href="https://github.com/neontomo"
+          target="_blank"
+          >Tomo Myrman</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
