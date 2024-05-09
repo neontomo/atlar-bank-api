@@ -94,7 +94,7 @@ npm run test
 - numbers are stored as strings just in case there are formatting issues with dots and commas
 - renamed the api responses to be more descriptive - `accountNumber` instead of `Id>Othr` for example
 
-## specifications
+## specifications from client
 
 ### inputs
 
