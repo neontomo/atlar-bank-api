@@ -19,17 +19,7 @@ const port = process.env.PORT || 3000
 
 app.use(`/api/${config.apiVersion}/accounts`, accountsRouter)
 
-app.use(`/api`, (req, res) => {
-  res.send({
-    message: 'Welcome to the bank API, where your dreams become reality.',
-    getStarted: `Please visit /api/${config.apiVersion}/accounts`,
-    docs: 'https://github.com/neontomo/atlar-bank-api',
-    author: 'Tomo Myrman',
-    fun: true
-  })
-})
-
-app.get('/', function (req, res) {
+app.get('/*', function (req, res) {
   res.sendFile('index.html', { root: __dirname })
 })
 
