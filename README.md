@@ -132,17 +132,19 @@ npm run build && npm run start # production
 
 make a request to the following endpoints with `x-www-form-urlencoded` data. parameters are sent with the request body, not as query parameters.
 
-- `GET` /getaccounts
+- `GET` /api/v1/accounts
   - get all accounts
-  - optional parameters:
-    - `accountNumber` - filter by account number
-  - returns `accountNumber`, `currency`, `ownerName`, and `balance` for each account.
+- `GET` /api/v1/accounts/{accountNumber}
+  - get a specific account
+- `GET` /api/v1/accounts/{accountNumber}/transactions
+  - get all transactions for a specific account
 - more coming...
 
-#### architectural decisions:
+## architectural decisions:
 
 - undefined data is set to `null`, to make it clear that the data is missing
 - numbers are stored as strings just in case there are formatting issues with dots and commas
+- renamed the api responses to be more descriptive
 
 ## what i learned and how i reasoned through the project
 
