@@ -18,7 +18,7 @@
 - i plan to treat it as a project, not an interview assignment
 - write a bank api with accounts and transactions
 - parse as much data as possible
-- stack used: `node`, `express`, `typescript`, `jest`, `supertest`, `xml2js`, `dotenv`, `express`, `jest`, `supertest`, `nodemon`
+- stack used: `node`, `express`, `typescript`, `jest`, `supertest`, `xml2js`, `dotenv`, `nodemon`
 
 ## specifications
 
