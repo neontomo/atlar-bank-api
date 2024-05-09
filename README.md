@@ -85,6 +85,7 @@ npm run test
 - `400` - bad request
 - `404` - not found
 - `500` - internal server error
+- `501` - not implemented
 - `200` - ok
 
 ## architectural decisions:
