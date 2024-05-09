@@ -6,6 +6,8 @@
 - [specifications](#specifications)
 - [example steps](#example-steps)
 - [install steps](#install-steps)
+- [api documentation](#api-documentation)
+  - [architectural decisions](#architectural-decisions)
 - [what i learned and how i reasoned through the project](#what-i-learned-and-how-i-reasoned-through-the-project)
 - [things left out or to improve](#things-left-out-or-to-improve)
 - [sponsors](#sponsors)
