@@ -123,7 +123,7 @@ npm run build && npm run start # production
 npm run test
 ```
 
-2. open the browser and go to http://localhost:3000/api/v1/accounts
+2. open the browser and go to http://localhost:3000/api/v1/
 3. use the api endpoints to get, update or delete data. e.g. `GET http://localhost:3000/api/v1/accounts` or use `postman` to make other types of requests than `GET`.
 
 ## api documentation (v1)

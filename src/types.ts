@@ -121,7 +121,12 @@ export interface TransactionsSummary {
 
 export interface TotalCreditEntries {
   NbOfNtries?: string[] | null
-  Sum?: string[] | null
+  Sum?: Amount[] | null
+}
+
+export interface TotalDebitEntries {
+  NbOfNtries?: string[] | null
+  Sum?: Amount[] | null
 }
 
 export interface Entry {
@@ -166,7 +171,6 @@ export interface TransactionDetails {
   RltdPties?: RelatedParties[] | null
   RltdAgts?: RelatedAgents[] | null
   RmtInf?: RemittanceInformation[] | null
-  Purp?: Purpose[] | null
 }
 
 export interface References {
