@@ -6,7 +6,7 @@
 - [specifications](#specifications)
 - [example steps](#example-steps)
 - [install steps](#install-steps)
-- [api documentation](#api-documentation)
+- [api documentation (v1)](#api-documentation-v1)
   - [architectural decisions](#architectural-decisions)
 - [what i learned and how i reasoned through the project](#what-i-learned-and-how-i-reasoned-through-the-project)
 - [things left out or to improve](#things-left-out-or-to-improve)
@@ -126,7 +126,7 @@ npm run test
 2. open the browser and go to http://localhost:3000
 3. use the api endpoints to get, update or delete data. e.g. `GET http://localhost:3000/api/v1/accounts` or use `postman` to make other types of requests than `GET`.
 
-## api documentation
+## api documentation (v1)
 
 available endpoints:
 
