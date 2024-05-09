@@ -111,7 +111,7 @@ cd atlar-bank-project
 npm install
 
 # rename the `example.env` file
-mv example.env .env
+mv .env.example .env
 
 # run the server
 npm run dev # development
@@ -123,7 +123,7 @@ npm run build && npm run start # production
 npm run test
 ```
 
-2. open the browser and go to http://localhost:3000
+2. open the browser and go to http://localhost:3000/api/v1/accounts
 3. use the api endpoints to get, update or delete data. e.g. `GET http://localhost:3000/api/v1/accounts` or use `postman` to make other types of requests than `GET`.
 
 ## api documentation (v1)
@@ -164,7 +164,7 @@ while designing the api, i researched best practices and tried to strike a balan
 
 i didn't work much with the raw xml, as i immediately converted it into json, a format i'm more comfortable in. i re-learned that json is a great format for storing and outputing data, but much harder to search through effectively while allowing for some flexibility in the data structure and types. i started to research packages for quickly searching through json with query languages and even looked at graphql (outside the scope of the project tho), but realised i didn't trust that there was enough consensus on which tools are stable (important in banking).
 
-I used a .env file to store the port and other variables, which is a common practice. I also used a `config` file to store the api version.
+I used a `.env` file to store the port and other variables, which is a common practice. I also used a `config` file to store the api version.
 
 i spent a lot of my time considering stability and to some degree followed the [robustness principle](https://en.wikipedia.org/wiki/robustness_principle), be conservative in your outputs, liberal in your inputs.
 
