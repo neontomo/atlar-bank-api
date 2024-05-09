@@ -77,37 +77,70 @@
 - example json (this might change when i learn more):
 
   ```json
-  {
-    "account": {
-      "account_number": "123456789",
+  [
+    {
+      "accountNumber": "54400001111",
       "currency": "SEK",
-      "owner_name": "John Doe",
-      "balance": 1000
-    },
-    "transactions": [
-      {
-        "booking_date": "2021-01-01",
-        "amount": 100,
+      "ownerName": "TEST Customer",
+      "balance": {
+        "amount": "3865371.31",
         "currency": "SEK",
-        "remittance_information": "payment",
-        "unique_identifier": "123456789"
+        "date": "2018-12-17"
       }
-    ]
-  }
+    },
+    {
+      "accountNumber": "3947876",
+      "currency": "SEK",
+      "ownerName": "Bobby",
+      "balance": {
+        "amount": null,
+        "currency": null,
+        "date": null
+      }
+    }
+  ]
   ```
 
 ## install steps
 
-- TODO, but will prob be a nextjs app so something like
+1. run these commands:
 
 ```bash
+brew install node # or visit https://nodejs.org/en/download/
+
+# clone the repo
 git clone https://github.com/neontomo/atlar-bank-project.git
-# cd into the project
-# run server
-# run client
-# make requests
-# see output and test it
+cd atlar-bank-project
+
+# install dependencies
+npm install
+
+# rename the `example.env` file
+mv example.env .env
+
+# run the server
+npm run dev # development
+npm run build && npm run start # production
 ```
+
+2. open the browser and go to http://localhost:3000
+3. use the api endpoints to get and list accounts and transactions (in your browser or with a tool like `postman`)
+
+## api documentation
+
+make a request to the following endpoints with `x-www-form-urlencoded` data. parameters are sent with the request body, not as query parameters.
+
+- `GET` /getaccounts
+  - get all accounts
+  - optional parameters:
+    - `accountNumber` - filter by account number
+  - returns `accountNumber`, `currency`, `ownerName`, and `balance` for each account.
+- more coming...
+
+#### architectural decisions:
+
+- undefined data is set to `null`, to make it clear that the data is missing
+- numbers are stored as strings just in case there are formatting issues with dots and commas
 
 ## what i learned and how i reasoned through the project
 
