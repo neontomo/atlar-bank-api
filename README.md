@@ -130,7 +130,7 @@ npm run build && npm run start # production
 
 ## api documentation
 
-make a request to the following endpoints with `x-www-form-urlencoded` data. parameters are sent with the request body, not as query parameters.
+make a request to the following endpoints with `x-www-form-urlencoded` data. get requests are made with query parameters, while post requests are made with body parameters.
 
 - `GET` /api/v1/accounts
   - get all accounts
