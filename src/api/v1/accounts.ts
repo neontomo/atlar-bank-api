@@ -6,6 +6,14 @@ import { AccountNew, TransactionNew } from '../../types'
 
 const router = express.Router()
 
+/* ROUTES:
+ * GET /api/v1/accounts
+ * GET /api/v1/accounts/:accountNumber
+ * GET /api/v1/accounts/:accountNumber/transactions
+ * PATCH /api/v1/accounts/:accountNumber
+ * DELETE /api/v1/accounts/:accountNumber
+ */
+
 function getAccountDataFromStatement(statement: Statement) {
   const account = statement?.Acct?.[0]
   const balance = statement?.Bal?.[0]
@@ -28,6 +36,37 @@ function getAccountDataFromStatement(statement: Statement) {
   return accountData
 }
 
+// GET /api/v1/accounts & GET /api/v1/accounts/:accountNumber
+router.get('/:accountNumber?', async (req: Request, res: Response) => {
+  const { accountNumber } = req.params
+  if (accountNumber) {
+    console.log(
+      `[server]: Searching for account info on account number: ${accountNumber}`
+    )
+  }
+
+  try {
+    const file = await loadFileToJSON()
+    const statements = file?.Document?.BkToCstmrStmt?.[0]?.Stmt as Statement[]
+    let accountDataArray = [] as AccountNew[]
+
+    statements?.forEach((statement) => {
+      const accountData = getAccountDataFromStatement(statement) as AccountNew
+
+      if (accountNumber && accountNumber !== accountData.accountNumber) {
+        return
+      }
+      accountDataArray.push(accountData)
+    })
+
+    return res.send(accountDataArray)
+  } catch (error) {
+    console.error(`[server error]: ${error}`)
+    return res.status(500).send({ message: `Error: ${error}` })
+  }
+})
+
+// GET /api/v1/accounts/:accountNumber/transactions
 router.get(
   '/:accountNumber/transactions',
   async (req: Request, res: Response) => {
@@ -102,44 +141,16 @@ router.get(
   }
 )
 
-router.get('/:accountNumber?', async (req: Request, res: Response) => {
-  const { accountNumber } = req.params
-  if (accountNumber) {
-    console.log(
-      `[server]: Searching for account info on account number: ${accountNumber}`
-    )
-  }
-
-  try {
-    const file = await loadFileToJSON()
-    const statements = file?.Document?.BkToCstmrStmt?.[0]?.Stmt as Statement[]
-    let accountDataArray = [] as AccountNew[]
-
-    statements?.forEach((statement) => {
-      const accountData = getAccountDataFromStatement(statement) as AccountNew
-
-      if (accountNumber && accountNumber !== accountData.accountNumber) {
-        return
-      }
-      accountDataArray.push(accountData)
-    })
-
-    return res.send(accountDataArray)
-  } catch (error) {
-    console.error(`[server error]: ${error}`)
-    return res.status(500).send({ message: `Error: ${error}` })
-  }
-})
-
-router.patch('/:accountNumber', async (req: Request, res: Response) => {
+// PATCH /api/v1/accounts/:accountNumber
+router.patch('/:accountNumber?', async (req: Request, res: Response) => {
   const { accountNumber } = req.params
   const { currency, ownerName, balanceAmount, balanceCurrency, balanceDate } =
     req.body
 
-  if (!ownerName) {
+  if (!accountNumber) {
     return res
       .status(400)
-      .send({ message: `Error: Missing ownerName in request body` })
+      .send({ message: 'Error: Account number is required' })
   }
 
   try {
@@ -166,6 +177,9 @@ router.patch('/:accountNumber', async (req: Request, res: Response) => {
       accountDataArray.push(newAccountData)
     })
 
+    if (!accountDataArray.length) {
+      return res.status(404).send({ message: 'Error: Account not found' })
+    }
     return res.send(accountDataArray)
   } catch (error) {
     console.error(`[server error]: ${error}`)
@@ -173,11 +187,14 @@ router.patch('/:accountNumber', async (req: Request, res: Response) => {
   }
 })
 
-router.delete('/:accountNumber', async (req: Request, res: Response) => {
+// DELETE /api/v1/accounts/:accountNumber
+router.delete('/:accountNumber?', async (req: Request, res: Response) => {
   const { accountNumber } = req.params
 
   if (!accountNumber) {
-    return res.status(400).send('Error: Missing accountNumber in request')
+    return res
+      .status(400)
+      .send({ message: 'Error: Account number is required' })
   }
 
   try {

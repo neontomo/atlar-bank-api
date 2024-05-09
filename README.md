@@ -18,7 +18,8 @@
 - i plan to treat it as a project, not an interview assignment
 - write a bank api with accounts and transactions
 - parse as much data as possible
-- presumed stack: `typescript`, `nodejs`, `express`, etc.
+- stack used: `node`, `express`, `typescript`, `jest`, `supertest`
+- packages used: `xml2js`, `dotenv`, `express`, `jest`, `supertest`, `nodemon`
 
 ## specifications
 
@@ -62,21 +63,14 @@
 - store the parsed data in-memory
 - parse the data
   - account
-    - account number
-    - currency
-    - owner name
-    - balance
+    - account number, currency, owner name, balance
   - transactions
-    - booking date
-    - amount and currency
-    - remittance information
-    - unique identifier
+    - booking date, amount and currency, remittance information, unique identifier
 - create endpoints
-  - get and list accounts
-  - list transactions for an account
+  - get & list accounts, list transactions for an account, update an account, delete an account
 - user accesses the api endpoints
 - output the data in `JSON` format
-- example json (this might change when i learn more):
+- example json:
 
   ```json
   [
@@ -123,14 +117,19 @@ mv example.env .env
 # run the server
 npm run dev # development
 npm run build && npm run start # production
+
+# run tests if you want,
+# it checks the api endpoints
+# for valid data & response codes
+npm run test
 ```
 
 2. open the browser and go to http://localhost:3000
-3. use the api endpoints to get and list accounts and transactions (in your browser or with a tool like `postman`)
+3. use the api endpoints to get, update or delete data. e.g. `GET http://localhost:3000/api/v1/accounts` or use `postman` to make other types of requests than `GET`.
 
 ## api documentation
 
-make a request to the following endpoints with `x-www-form-urlencoded` data:
+available endpoints:
 
 - `GET` /api/v1/accounts
   - get all accounts
@@ -156,15 +155,33 @@ make a request to the following endpoints with `x-www-form-urlencoded` data:
 
 - undefined data is set to `null`, to make it clear that the data is missing
 - numbers are stored as strings just in case there are formatting issues with dots and commas
-- renamed the api responses to be more descriptive
+- renamed the api responses to be more descriptive - `accountNumber` instead of `Id>Othr` for example
 
 ## what i learned and how i reasoned through the project
 
-- TODO
+i learned a lot about how banking systems work and how data is stored and sent. it surprised me that the banks `camt` format wasn't at all semantic, leading to more research than would have otherwise been necessary. despite this, i saw the value in the rigidity and predictable structure of the format and enjoyed understanding the specs.
+
+while designing the api, i researched best practices and tried to strike a balance between doing things correctly while still getting code out the door quickly. the way i did this is by iterating and accepting that code is by its nature a work in progress, but focused more strongly on specific method ideas that people expect from the protocol such as error handling, common route structures, future proofing with api versions and so on.
+
+i didn't work much with the raw xml, as i immediately converted it into json, a format i'm more comfortable in. i re-learned that json is a great format for storing and outputing data, but much harder to search through effectively while allowing for some flexibility in the data structure and types. i started to research packages for quickly searching through json with query languages and even looked at graphql (outside the scope of the project tho), but realised i didn't trust that there was enough consensus on which tools are stable (important in banking).
+
+I used a .env file to store the port and other variables, which is a common practice. I also used a `config` file to store the api version.
+
+i spent a lot of my time considering stability and to some degree followed the [robustness principle](https://en.wikipedia.org/wiki/robustness_principle), be conservative in your outputs, liberal in your inputs.
 
 ## things left out or to improve
 
-- TODO
+- **inspiration** - if i had more time i would have looked more at other implementations of the `camt053` format.
+
+- **non-semantic api** - since my api renames values to be more semantic, i also considered making a separate api route that outputs the original values, for mission critical systems.
+
+- **structured doc** - i looked at atlars own api documentation which pointed me in the right direction a few times, i would have loved to have built out a more structured api doc like it.
+
+- **security** - auth is something i skipped - not only because it would have taken time, but because i don't understand exactly who is using this particular api, which would influence my strategy. in general, i would implement a bearer/JWS token and send it with each request. other nice things:
+
+  - rate limiting & not sending too much data at once
+  - logging (request IDs, IP, etc.)
+  - more systematic error handling (correct status codes and messages)
 
 ## sponsors
 
