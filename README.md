@@ -130,7 +130,7 @@ npm run build && npm run start # production
 
 ## api documentation
 
-make a request to the following endpoints with `x-www-form-urlencoded` data. get requests are made with query parameters, while post requests are made with body parameters.
+make a request to the following endpoints with `x-www-form-urlencoded` data:
 
 - `GET` /api/v1/accounts
   - get all accounts
@@ -138,6 +138,18 @@ make a request to the following endpoints with `x-www-form-urlencoded` data. get
   - get a specific account
 - `GET` /api/v1/accounts/{accountNumber}/transactions
   - get all transactions for a specific account
+- `PATCH` /api/v1/accounts/{accountNumber}
+  - update a specific account with new data, returns the new object
+  - params available:
+    - `accountNumber`
+    - `currency`
+    - `ownerName`
+    - `balance`
+    - `balanceAmount`
+    - `balanceCurrency`
+    - `balanceDate`
+- `DELETE` /api/v1/accounts/{accountNumber}
+  - delete a specific account
 - more coming...
 
 ## architectural decisions:

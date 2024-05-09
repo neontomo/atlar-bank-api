@@ -1,7 +1,7 @@
 import express from 'express'
 import { Request, Response } from 'express'
 import { loadFileToJSON } from '../../fileUtils'
-import { Statement, Account } from '../../types'
+import { Statement } from '../../types'
 import { AccountNew, TransactionNew } from '../../types'
 
 const router = express.Router()
@@ -97,7 +97,7 @@ router.get(
       return res.send(transactionsArray)
     } catch (error) {
       console.error(`[server error]: ${error}`)
-      return res.send(`Error: ${error}`)
+      return res.status(500).send({ message: `Error: ${error}` })
     }
   }
 )
@@ -127,22 +127,19 @@ router.get('/:accountNumber?', async (req: Request, res: Response) => {
     return res.send(accountDataArray)
   } catch (error) {
     console.error(`[server error]: ${error}`)
-    return res.send(`Error: ${error}`)
+    return res.status(500).send({ message: `Error: ${error}` })
   }
 })
 
 router.patch('/:accountNumber', async (req: Request, res: Response) => {
   const { accountNumber } = req.params
-  const { ownerName } = req.body
+  const { currency, ownerName, balanceAmount, balanceCurrency, balanceDate } =
+    req.body
 
   if (!ownerName) {
-    return res.status(400).send('Error: Missing ownerName in request body')
-  }
-
-  if (accountNumber) {
-    console.log(
-      `[server]: Updating account info on account number: ${accountNumber}`
-    )
+    return res
+      .status(400)
+      .send({ message: `Error: Missing ownerName in request body` })
   }
 
   try {
@@ -156,14 +153,58 @@ router.patch('/:accountNumber', async (req: Request, res: Response) => {
       if (accountNumber && accountNumber !== accountData.accountNumber) {
         return
       }
-      accountData.ownerName = ownerName
-      accountDataArray.push(accountData)
+      const newAccountData = {
+        ...accountData,
+        currency: currency || accountData.currency,
+        ownerName: ownerName || accountData.ownerName,
+        balance: {
+          amount: balanceAmount || accountData?.balance?.amount || null,
+          currency: balanceCurrency || accountData?.balance?.currency || null,
+          date: balanceDate || accountData?.balance?.date || null
+        }
+      }
+      accountDataArray.push(newAccountData)
     })
 
     return res.send(accountDataArray)
   } catch (error) {
     console.error(`[server error]: ${error}`)
-    return res.send(`Error: ${error}`)
+    return res.status(500).send({ message: `Error: ${error}` })
+  }
+})
+
+router.delete('/:accountNumber', async (req: Request, res: Response) => {
+  const { accountNumber } = req.params
+
+  if (!accountNumber) {
+    return res.status(400).send('Error: Missing accountNumber in request')
+  }
+
+  try {
+    const file = await loadFileToJSON()
+    const statements = file?.Document?.BkToCstmrStmt?.[0]?.Stmt as Statement[]
+    let deletedAccount = false
+
+    statements?.forEach((statement) => {
+      const accountData = getAccountDataFromStatement(statement) as AccountNew
+
+      if (accountNumber && accountNumber === accountData.accountNumber) {
+        deletedAccount = true
+      }
+    })
+
+    if (!deletedAccount) {
+      return res.status(404).send({ message: 'Error: Account not found' })
+    }
+
+    return res.send({
+      message: `Account with account number ${accountNumber} has been deleted`,
+      accountNumber,
+      deleted: true
+    })
+  } catch (error) {
+    console.error(`[server error]: ${error}`)
+    return res.status(500).send({ message: `Error: ${error}` })
   }
 })
 

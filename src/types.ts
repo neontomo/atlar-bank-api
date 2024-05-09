@@ -273,7 +273,7 @@ export type AccountNew = {
   accountNumber?: string | null
   currency?: string | null
   ownerName?: string | null
-  balance?: Balance | null
+  balance?: BalanceNew | null
 }
 
 export type BalanceNew = {
