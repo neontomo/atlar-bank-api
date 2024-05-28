@@ -2,12 +2,13 @@
 
 # contents
 
+- [screenshots](#screenshots)
 - [general notes](#general-notes)
-- [specifications](#specifications)
-- [example steps](#example-steps)
 - [install steps](#install-steps)
 - [api documentation (v1)](#api-documentation-v1)
-  - [architectural decisions](#architectural-decisions)
+- [architectural decisions](#architectural-decisions)
+- [specifications from client](#specifications-from-client)
+- [example steps](#example-steps)
 - [what i learned and how i reasoned through the project](#what-i-learned-and-how-i-reasoned-through-the-project)
 - [things left out or to improve](#things-left-out-or-to-improve)
 - [sponsors](#sponsors)
@@ -20,8 +21,7 @@
 
 ## general notes
 
-- use tech i am used to & show my skills
-- i plan to treat it as a project, not an interview assignment
+- i plan to use tech i am used to
 - write a bank api with accounts and transactions
 - parse as much data as possible
 - my aim is to focus on quality & stability over quantity
